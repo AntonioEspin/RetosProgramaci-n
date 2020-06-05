@@ -1,0 +1,76 @@
+<!-- Reto #1 - Número mayor y menor
+Escribe un programa que pida al usuario 2 números, mostrando como salida cuál es el número mayor y la diferencia de uno respecto al otro. En caso de que los números sean iguales, mostrarlo también en pantalla. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer Reto</title>
+</head>
+<style>
+    body{
+        margin: 0;
+    }
+    main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div {
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    input {
+        width: 15em;
+        height: 1.5em;
+    }
+</style>
+<body>
+    <main>
+        <h1>Cual numero es mayor?</h1>
+        <div>
+            <h3>Ingresa un numero:</h3>
+            <input type="text" name="" id="first_number">
+        </div>
+        <div>
+            <h3>Ingresa un numero:</h3>
+            <input type="text" name="" id="second_number">
+        </div>
+        <button id="button">Ingresar</button>
+        <p id="parrafo"></p>
+    </main>
+
+    <script>
+
+        const first_number = document.getElementById('first_number');
+        const second_number = document.getElementById('second_number');
+        const parrafo = document.getElementById('parrafo');
+        const button = document.getElementById('button');
+
+        button.addEventListener('click', result);
+
+        function result (){
+            const first = parseInt(first_number.value);
+            const second = parseInt(second_number.value);
+            const diferencia = Math.abs(first - second)
+            if(first > second){
+                parrafo.innerHTML = `${first} es mayor que ${second} y su diferencia es de ${diferencia}`
+            } else if (first < second){
+                parrafo.innerHTML = `${first} es menor que ${second} y su diferencia es de ${diferencia}`
+            } else {
+                parrafo.innerHTML = `${first} es igual a ${second}`
+            }
+        }
+
+
+    </script>
+</body>
+</html>

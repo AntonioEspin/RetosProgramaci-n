@@ -1,0 +1,90 @@
+<!-- Reto #4 - “I like turtles”
+Escribe un programa que pida al usuario ingrese su animal favorito, si coloca ‘Tortuga’, ‘tortuga’, ‘TORTUGA’ o cualquier otra variante de la palabra entonces mostrar en pantalla “También me gustan las tortugas”. En caso contrario mostrar el mensaje “Ese animal es genial, pero prefiero las tortugas”. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuarto Reto</title>
+  <style>
+    body{
+        margin: 0;
+    }
+    main {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div {
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    input {
+        width: 15em;
+        height: 1.5em;
+    }
+</style>
+</head>
+<body>
+  <main>
+    <h1>Se encuentra en el rango?</h1>
+    <div>
+        <h3>Cual es tu animal favorito?</h3>
+        <input type="text" name="" id="name_animal">
+    </div>
+    <button id="button">Ingresar</button>
+    <p id="parrafo"></p>
+</main>
+
+<script>
+
+    const name_animal = document.getElementById('name_animal');
+    const parrafo = document.getElementById('parrafo');
+    const button = document.getElementById('button');
+
+    button.addEventListener('click', result);
+
+    function result (){
+        const animal = name_animal.value;
+        switch (animal) {
+          case 'tortuga':
+          parrafo.innerHTML = `A mi tambien me gustan las tortugas`
+          break;
+          case 'Tortuga':
+          parrafo.innerHTML = `A mi tambien me gustan las tortugas`
+          break;
+          case 'tortugas':
+          parrafo.innerHTML = `A mi tambien me gustan las tortugas`
+          break;
+          case 'Tortugas':
+          parrafo.innerHTML = `A mi tambien me gustan las tortugas`
+          break;
+          case 'TORTUGA':
+          parrafo.innerHTML = `A mi tambien me gustan las tortugas`
+          break;
+          case 'TORTUGAS':
+          parrafo.innerHTML = `A mi tambien me gustan las tortugas`
+          break;
+          default:
+          parrafo.innerHTML = `Que bueno que te guste ese animal, pero a mi me gustan las tortugas`
+        }
+
+
+        // if(animal === 'tortuga'){
+        //   parrafo.innerHTML = `A mi tambien me gustan las tortugas`
+        // } else {
+        //   parrafo.innerHTML = `Que bueno que te guste ese animal, pero a mi me gustan las tortugas`
+        // }
+          
+    } 
+</script>
+</body>
+</html>
